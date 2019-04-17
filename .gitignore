@@ -10,3 +10,4 @@ npm-debug.log
 .cache/
 .npm/
 .local/
+.png/
