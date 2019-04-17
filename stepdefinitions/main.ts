@@ -36,5 +36,5 @@ Then(/^We should get a TestArmy header on Google page$/, async function () {
 
 Then(/^This should be fail$/, async function () {
     await Actions.attachScreenshot(this);
-    expect(await imageCompare.checkElement($('#hplogo'), 'googleLogoFail')).to.not.equal(0); // To make it failing just remove "not"
+    expect(await imageCompare.checkElement($('#hplogo'), 'googleLogoFail')).to.equal(0); // To make it failing just remove "not"
 })
