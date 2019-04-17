@@ -1,14 +1,18 @@
 import { $, $$, ElementFinder, by, element, ElementArrayFinder } from "protractor";
 import { Actions } from "../../support/actions";
+import { CustomWait } from "../../support/wait";
+import { testConfig } from "../../config/test-config";
 
 
 export class ContactPage {
+    private MEDIUM_TIMEOUT: number = 10000;
+    private messageFromContactPage: string = testConfig.messageFromContactPage;
     private nameInput: ElementFinder;
     private emailInput: ElementFinder;
     private messageInput: ElementFinder;
     private sendBtn: ElementFinder;
     private menuItems: ElementArrayFinder;
-    private expectedHeadline: string;
+    private expectedHeadline: ElementFinder;
 
     constructor() {
         this.nameInput = $('#name');
@@ -16,7 +20,7 @@ export class ContactPage {
         this.messageInput = $('#content');
         this.sendBtn = $('fieldset > button');
         this.menuItems = $$('div .nav > li');
-        this.expectedHeadline = "Your message has been sent.";
+        this.expectedHeadline = $('.message h3');
     };
 
     async naviagetToContactPage() {
@@ -31,7 +35,7 @@ export class ContactPage {
     };
 
     async clickMenuItemAt(idx) {
-        await this.menuItems.get(idx).click();
+        await Actions.click(this.menuItems.get(idx));
     };
 
     async enterName(phrase: string) {
@@ -51,10 +55,9 @@ export class ContactPage {
     };
 
     async findHeadlineText() {
-        return element(by.xpath("//h3[contains(text(),'" + this.expectedHeadline + "')]")).getText();
+        await CustomWait.waitForTextInElement(this.expectedHeadline, this.messageFromContactPage, this.MEDIUM_TIMEOUT)
+        return this.expectedHeadline.getText();
     };
 
-    async expectedHeadlineText() {
-        return this.expectedHeadline;
-    };
+
 }
