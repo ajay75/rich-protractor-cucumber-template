@@ -3,8 +3,8 @@ Feature: 021 - Fill form
        @contact
        Scenario Outline: As a user I can fill questionnare
               Given User entered contact page
-              When User fill <Name>, <Email> and <Message>
-              Then User see message
+              When User fills <Name>, <Email> and <Message>
+              Then The succesfull message is displayed.
               Examples:
                      | Name   | Email                      | Message |
                      | Jan    | 5waleed.iftikharh@vip.cool | test1   |
