@@ -11,11 +11,11 @@ Given(/^User entered contact page$/, async function () {
     await contactPage.naviagetToContactPage();
 });
 
-When(/^User fill ([^"]+), (.+) and (.+)$/, async function (name: string, email: string, msg: string) {
+When(/^User fills ([^"]+), (.+) and (.+)$/, async function (name: string, email: string, msg: string) {
     await contactPage.fillFormAndPushSubmit(name, email, msg);
 });
 
-Then(/^User see message$/, async function () {
+Then(/^The succesfull message is displayed.$/, async function () {
     const EXPECTED_RESULT = testConfig.messageFromContactPage;
     const ACTUAL_RESULT = await contactPage.findHeadlineText();
     expect(ACTUAL_RESULT).to.equal(EXPECTED_RESULT);
