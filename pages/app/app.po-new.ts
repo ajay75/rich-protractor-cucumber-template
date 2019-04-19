@@ -81,7 +81,6 @@ export class SupplierClient {
         return element(by.css('div.form-group>p>a[href="#/login/reset-password"]')).getText();
     }
 
-    
     //CHANGE PASSWORD
     changePassword() {
         element(by.css('.current-session-menu .dropdown.open-on-click a.session-menu-toggle')).click();

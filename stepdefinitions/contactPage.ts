@@ -19,5 +19,5 @@ Then(/^The succesfull message is displayed.$/, async function () {
     const EXPECTED_RESULT = testConfig.messageFromContactPage;
     const ACTUAL_RESULT = await contactPage.findHeadlineText();
     expect(ACTUAL_RESULT).to.equal(EXPECTED_RESULT);
-    //test
+    console.log();
 });
