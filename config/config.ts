@@ -9,11 +9,12 @@ export const config: Config = {
     SELENIUM_PROMISE_MANAGER: false,
 
     capabilities: {
-        shardTestFiles: true,
+        shardTestFiles: false,
         maxInstances: 1,
         browserName: "chrome",
+        restartBrowserBetweenTests: false,
         chromeOptions: {
-            args: ['--no-sandbox', '--disable-setuid-sandbox', '--test-type=browser', '--enable-logging', '--v=1'],
+            args: ['--no-sandbox', '--test-type=browser'],
             prefs: {
                 'plugins.always_open_pdf_externally': true,
                 'download': {
@@ -25,7 +26,6 @@ export const config: Config = {
             },
         },
     },
-
 
     framework: "custom",
     frameworkPath: require.resolve("protractor-cucumber-framework"),
