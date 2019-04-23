@@ -5,4 +5,3 @@ tmux new-session -d -s TestRecording 'ffmpeg -y -r 30 -f x11grab -video_size 192
 npm run contact
 tmux send-keys -t TestRecording q
 sleep 10
-
