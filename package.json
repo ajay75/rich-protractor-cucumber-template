@@ -23,11 +23,12 @@
     "test": "node -r ts-node/register ./node_modules/protractor/bin/protractor config/config.ts",
     "headless": "node -r ts-node/register ./node_modules/protractor/bin/protractor config/config.headless.ts",
     "scenario": "node -r ts-node/register ./node_modules/protractor/bin/protractor config/config.ts --cucumberOpts.tags=\"@scenario\"",
+    "contact": "node -r ts-node/register ./node_modules/protractor/bin/protractor config/config.ts --cucumberOpts.tags=\"@contact\"",
     "webdriver-update": "webdriver-manager update",
     "webdriver-update-ci": "webdriver-manager update --versions.chrome 2.45",
     "webdriver-start": "webdriver-manager start",
     "debug": "node -r ts-node/register --inspect-brk ./node_modules/protractor/bin/protractor config/config.ts",
-    "debug-scenario": "node -r ts-node/register --inspect-brk ./node_modules/protractor/bin/protractor config/config.ts --cucumberOpts.tags=\"@scenario\""
+    "debug-scenario": "node -r ts-node/register --inspect-brk ./node_modules/protractor/bin/protractor config/config.ts --cucumberOpts.tags=\"@contact\""
   },
   "author": "Jacek Okrojek <jacek.okrojek@gmail.com>",
   "devDependencies": {
