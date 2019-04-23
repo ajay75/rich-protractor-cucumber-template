@@ -38,7 +38,7 @@ export const config: Config = {
         browser.manage().window().setSize(1920, 1080);
         browser.manage().timeouts().implicitlyWait(30000);
 
-        /*const protractorImageComparison = require('protractor-image-comparison');
+       /* const protractorImageComparison = require('protractor-image-comparison');
         browser.protractorImageComparison = new protractorImageComparison(
             {
                 baselineFolder: 'data/image-comparison/baseline/',
