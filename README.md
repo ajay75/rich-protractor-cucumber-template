@@ -41,3 +41,12 @@ To check of the input data used in case tests please look at data/test-config.ts
 
 ### Status
 Project is: _in progress_.
+
+### Image Comparison functionality
+To enable functionality image-comparison You should install protractor-image-comparison.
+
+`npm install --save protractor-image-comparison`
+`npm install --save-dev protractor-image-comparison`
+
+In next step You should uncomment code in file config/config.ts in the lines 41-49.
+Documentation about protractor-image-comparison You can find on https://www.npmjs.com/package/protractor-image-comparison.
