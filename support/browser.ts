@@ -1,7 +1,7 @@
 import { browser } from 'protractor';
 import { CustomWait } from "../support/wait";
 import { logThisMethod } from "../support/logging-decorator"
-import { testConfig } from "../config/test-config";
+import { testConfig } from "../data/test-config";
 
 class BrowserActions {
 
