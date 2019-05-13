@@ -38,11 +38,20 @@ export const config: Config = {
         browser.ignoreSynchronization = true;
         browser.manage().window().setSize(1920, 1080);
         browser.manage().timeouts().implicitlyWait(30000);
+        /* const protractorImageComparison = require('protractor-image-comparison');
+        browser.protractorImageComparison = new protractorImageComparison(
+          {
+            baselineFolder: 'data/image-comparison/baseline/',
+            screenshotPath: 'data/image-comparison/screenshots/',
+            formatImageName: '{browserName}_{tag}',
+            autoSaveBaseline: true,
+         }
+        )*/
     },
 
     cucumberOpts: {
         compiler: "ts:ts-node/register",
-        format: ["json:.tmp/results.json", "node_modules/cucumber-pretty" ],
+        format: ["json:.tmp/results.json", "node_modules/cucumber-pretty"],
         require: ["../stepdefinitions/*.ts", "../support/*.ts"],
         strict: true,
         tags: "",
