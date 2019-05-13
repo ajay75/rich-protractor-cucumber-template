@@ -1,7 +1,6 @@
 import { Given, When, Then } from "cucumber";
 import { ContactPage } from "../pages/app/contact";
 
-
 const chai = require("chai").use(require("chai-as-promised"));
 const expect = chai.expect;
 const contactPage: ContactPage = new ContactPage();

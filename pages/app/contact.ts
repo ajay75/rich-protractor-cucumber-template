@@ -3,7 +3,6 @@ import { Actions } from "../../support/actions";
 import { CustomWait } from "../../support/wait";
 
 
-
 export class ContactPage {
     private MEDIUM_TIMEOUT: number = 10000;
     private messageFromContactPage: string = "Your message has been sent.";
