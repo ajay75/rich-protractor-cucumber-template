@@ -28,8 +28,12 @@
     "webdriver-update-ci": "webdriver-manager update --versions.chrome 2.45",
     "webdriver-start": "webdriver-manager start",
     "debug": "node -r ts-node/register --inspect-brk ./node_modules/protractor/bin/protractor config/config.ts",
-    "debug-scenario": "node -r ts-node/register --inspect-brk ./node_modules/protractor/bin/protractor config/config.ts --cucumberOpts.tags=\"@contact\""
+    "debug-scenario": "node -r ts-node/register --inspect-brk ./node_modules/protractor/bin/protractor config/config.ts --cucumberOpts.tags=\"@contact\"",
+    "browserstack-single":"node -r ts-node/register ./node_modules/protractor/bin/protractor config/config.browserstack.single.ts --cucumberOpts.tags=\"@bstack\"",
+    "browserstack-multi":"node -r ts-node/register ./node_modules/protractor/bin/protractor config/config.browserstack.multi.ts --cucumberOpts.tags=\"@bstack\"",
+    "chrome-log":"node -r ts-node/register ./node_modules/protractor/bin/protractor config/config.chrome.log.ts"
   },
+
   "author": "Jacek Okrojek <jacek.okrojek@gmail.com>",
   "devDependencies": {
     "@types/cucumber": "^4.0.4",
@@ -50,6 +54,7 @@
   "repository": "https://github.com/jacekokrojek/rich-protractor-cucumber-template",
   "dependencies": {
     "btoa": "^1.2.1",
+    "browserstack-local": "^1.0.0",
     "cucumber-junit-convert": "^1.0.2",
     "cucumber-pretty": "^1.5.0",
     "googleapis": "^27.0.0",

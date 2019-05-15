@@ -1,12 +1,11 @@
 import { $, $$, ElementFinder, by, element, ElementArrayFinder } from "protractor";
 import { Actions } from "../../support/actions";
 import { CustomWait } from "../../support/wait";
-import { testConfig } from "../../config/test-config";
 
 
 export class ContactPage {
     private MEDIUM_TIMEOUT: number = 10000;
-    private messageFromContactPage: string = testConfig.messageFromContactPage;
+    private messageFromContactPage: string = "Your message has been sent.";
     private nameInput: ElementFinder;
     private emailInput: ElementFinder;
     private messageInput: ElementFinder;

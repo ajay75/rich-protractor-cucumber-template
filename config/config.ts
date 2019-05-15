@@ -1,6 +1,7 @@
 import { browser, Config } from "protractor";
 import { generateXmlReport } from "../support/reporter-xml"
 
+
 export const config: Config = {
 
     directConnect: true,
@@ -51,7 +52,7 @@ export const config: Config = {
 
     cucumberOpts: {
         compiler: "ts:ts-node/register",
-        format: ["json:.tmp/results.json", "node_modules/cucumber-pretty" ],
+        format: ["json:.tmp/results.json", "node_modules/cucumber-pretty"],
         require: ["../stepdefinitions/*.ts", "../support/*.ts"],
         strict: true,
         tags: "",

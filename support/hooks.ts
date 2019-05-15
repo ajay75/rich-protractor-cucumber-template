@@ -1,6 +1,5 @@
 const {  Status, After, Before } = require("cucumber");
 
-import { browser } from "protractor";
 import { Actions } from "./actions";
 import { BrowserActions } from "./browser";
 
@@ -12,7 +11,6 @@ Before(async function (scenario) {
     await BrowserActions.get("/");
     await Actions.attachScreenshot(this);
     await Actions.log(`Loaded "/"`);
-
 });
 
 After(async function (scenario) {

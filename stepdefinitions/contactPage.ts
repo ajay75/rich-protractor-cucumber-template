@@ -1,6 +1,5 @@
 import { Given, When, Then } from "cucumber";
 import { ContactPage } from "../pages/app/contact";
-import { testConfig } from "../config/test-config";
 
 const chai = require("chai").use(require("chai-as-promised"));
 const expect = chai.expect;
@@ -16,7 +15,7 @@ When(/^User fills ([^"]+), (.+) and (.+)$/, async function (name: string, email:
 });
 
 Then(/^The succesfull message is displayed.$/, async function () {
-    const EXPECTED_RESULT = testConfig.messageFromContactPage;
+    const EXPECTED_RESULT = "Your message has been sent.";
     const ACTUAL_RESULT = await contactPage.findHeadlineText();
     expect(ACTUAL_RESULT).to.equal(EXPECTED_RESULT);
 });
